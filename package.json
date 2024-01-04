@@ -1,7 +1,11 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode development"
+    "start": "webpack-dev-server --config ./webpack.client.js --mode development --open --hot",
+    "build:client": "webpack --config webpack.client.js",
+    "build:server": "webpack --config webpack.server.js"
+  },
+  "browser": {
+    "[module-name]": false
   },
   "dependencies": {
     "@types/react": "^18.2.46",
