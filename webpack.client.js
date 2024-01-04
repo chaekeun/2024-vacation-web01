@@ -20,8 +20,13 @@ module.exports = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
+
   plugins: [
     new CleanWebpackPlugin(), // 웹팩 실행시마다 dist 폴더 정리
     new HtmlWebpackPlugin({
