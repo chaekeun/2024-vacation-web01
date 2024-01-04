@@ -9,7 +9,7 @@ function welcome() {
 function App() {
   return (
     <div className="App">
-      <div id="test">Test </div>
+      <div id="test">Test2 </div>
       <button onClick={welcome}>Click Me!</button>
     </div>
   );

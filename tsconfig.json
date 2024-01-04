@@ -1,23 +1,17 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "sourceMap": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true,
-    //무슨 import문법 쓸건지
-    "module": "commonjs",
-    "target": "es5",
-    //ts 컴파일러에게 사용할 라이브러리나 환경을 지정할때
-    "lib": ["es2015", "es2017", "dom"],
-    "removeComments": true,
-    "allowSyntheticDefaultImports": false,
+    "target": "ESNext",
     "jsx": "react-jsx",
-    //js파일들 ts에서 import해서 쓸수 있는지
-    "allowJs": true,
-    "baseUrl": "./",
-    "paths": {
-      "src/*": ["src/*"]
-    }
-  },
-  "include": ["src"]
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "allowJs": true
+    // "baseUrl": "./",
+    // "paths": {
+    //   "src/*": ["src/*"]
+    // }
+  }
+  // "include": ["src"]
 }
