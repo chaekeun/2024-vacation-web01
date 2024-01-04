@@ -6,6 +6,7 @@ import fs from "fs";
 import path from "path";
 import ReactDOMServer from "react-dom/server";
 import App from "../client/App";
+import Detail from "../client/Detail";
 
 const app = express();
 // 클라이언트 사이드에서 빌드된 html을 읽어와 사용
@@ -25,6 +26,18 @@ app.get("/", (req, res) => {
     )
   );
 });
+
+app.get("/detail", (req, res) => {
+  const renderString = ReactDOMServer.renderToString(<Detail />);
+  // <div id="root"></div> 내부에 삽입
+  res.send(
+    html.replace(
+      '<div id="root"></div>',
+      `<div id="root">${renderString}</div>`
+    )
+  );
+});
+
 // 위의 / 이외의 경로로 요청할 경우(js, css 등)
 // dist/client 폴더에 있는 파일들 제공
 app.use("/", express.static("dist/client"));
